@@ -68,23 +68,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)..\websocketpp-master;$(SolutionDir)common;D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\include;D:\ed\WORK\WebSockets\Build-OpenSSL-VC-32\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\vs2012\lib;D:\ed\WORK\WebSockets\Build-OpenSSL-VC-32\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\..\websocketpp-master;$(SolutionDir)common;$(SolutionDir)..\..\Build-OpenSSL-VC-32\include;D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\..\Build-OpenSSL-VC-32\lib;D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\vs2012\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)..\websocketpp-master;$(SolutionDir)common;D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\include;D:\ed\WORK\WebSockets\Build-OpenSSL-VC-64D\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\vs2012\lib64;D:\ed\WORK\WebSockets\Build-OpenSSL-VC-64D\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\..\websocketpp-master;$(SolutionDir)common;$(SolutionDir)..\..\Build-OpenSSL-VC-64D\include;D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\..\Build-OpenSSL-VC-64D\lib;D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\vs2012\lib64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)..\websocketpp-master;$(SolutionDir)common;D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\include;D:\ed\WORK\WebSockets\Build-OpenSSL-VC-32\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\vs2012\lib;D:\ed\WORK\WebSockets\Build-OpenSSL-VC-32\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\..\websocketpp-master;$(SolutionDir)common;$(SolutionDir)..\..\Build-OpenSSL-VC-32\include;D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\..\Build-OpenSSL-VC-32\lib;D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\vs2012\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)..\websocketpp-master;$(SolutionDir)common;D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\include;D:\ed\WORK\WebSockets\Build-OpenSSL-VC-64\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\vs2012\lib64;D:\ed\WORK\WebSockets\Build-OpenSSL-VC-64D\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\..\websocketpp-master;$(SolutionDir)common;$(SolutionDir)..\..\Build-OpenSSL-VC-64\include;D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\..\Build-OpenSSL-VC-64D\lib;D:\ed\WORK\GIT\SHARED\3rd_party\boost_1_66_0\vs2012\lib64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
