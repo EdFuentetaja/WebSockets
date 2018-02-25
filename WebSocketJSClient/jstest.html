@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <title>WebSocket JS client</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</header>
+<body>
+<script>
+
+var ws;
+setup();
+
+function setup()
+{
+	ws = new WebSocket("wss://127.0.0.1:8080/hello");
+
+	ws.onopen = function (event) {
+		ws.send("Hello from JS!");
+		console.log(ws.protocol);
+	}
+
+	ws.onmessage = function (event) {
+	  console.log(event.data);
+	  document.getElementById("server_reply").innerHTML = event.data;
+	}
+
+	ws.onerror = function (event) {
+	  // Retry
+	  setTimeout(function() { setup(); }, 5000);
+	}
+}
+
+</script>
+
+<p>Hello</p>
+
+<p id="server_reply"></p>
+
+</body>
+</html>
