@@ -68,7 +68,7 @@ namespace WebSocketCSServer
             //using (WebSocketServerWrapper wssw = new WebSocketServerWrapper(System.Net.IPAddress.Parse("127.0.0.1"), 8080))
 
             // Secure wss://
-            bool requireClientCertificate = true;
+            bool requireClientCertificate = false;
             using (WebSocketServerWrapper wssw = new WebSocketServerWrapper(System.Net.IPAddress.Parse("127.0.0.1"), 8080, SERVER_PFX_CERTIFICATE, SERVER_PFX_PASSWORD, requireClientCertificate))
             {
                 string path = "/hello"; // Be sure to start it with a /

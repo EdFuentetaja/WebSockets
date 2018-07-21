@@ -36,17 +36,30 @@ namespace WebSocketCSClient
             Console.WriteLine("Server says: " + a_eventArgs.Data);
         }
 
+        private static void ws_OnClose(object sender, CloseEventArgs e)
+        {
+            Console.WriteLine("Server closed the connection " + e.Code + " " + e.Reason + " " + e.WasClean);
+        }
+
+        static void wscw_OnError(object sender, ErrorEventArgs e)
+        {
+            Console.WriteLine("OnError triggered " + e.Message + " " + e.Exception);
+        }
+
         static void Main(string[] a_args)
         {
             const string CLIENT_PFX_CERTIFICATE = "..\\..\\..\\..\\certificate_client\\client.pfx";
             const string CLIENT_PFX_PASSWORD = "secretpassword";
             // Additionally install as CA the server certificate
-            bool secure = true;
+            bool secure = false;
             using (WebSocketClientWrapper wscw = new WebSocketClientWrapper("127.0.0.1", 8080, "/hello", secure))
             {
                 wscw.SetupClientAuthentication(CLIENT_PFX_CERTIFICATE, CLIENT_PFX_PASSWORD);
 
                 wscw.OnMessage += ws_OnMessage;
+                wscw.OnClose += ws_OnClose;
+                wscw.OnError += wscw_OnError;
+
 
                 Console.WriteLine("Going to connect to: " + wscw.Url);
                 wscw.Connect();

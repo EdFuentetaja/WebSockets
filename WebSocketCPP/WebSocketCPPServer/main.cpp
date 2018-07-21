@@ -96,13 +96,13 @@ websocketpp::lib::shared_ptr<IServer> make_webserver(const websocketpp::lib::asi
 
 websocketpp::lib::shared_ptr<IServer> make_secure_webserver(const websocketpp::lib::asio::ip::tcp::endpoint& a_endpoint, bool a_require_client_certificate)
 {
-    const std::string CA_DIRECTORY = "..\\certificate_server\\CA";
-    const std::string SERVER_PFX_CERTIFICATE = "..\\certificate_server\\server.pfx";
+    const std::string CA_DIRECTORY = "..\\..\\certificate_server\\CA";
+    const std::string SERVER_PFX_CERTIFICATE = "..\\..\\certificate_server\\server.pfx";
     // This is to avoid having a string in the executable file with the PFX password in the clear. In practice, nobody can help protecting
     // the password from a hacker with the execurable file and a debugger. At least we are making it a bit more time consuming.
     std::stringstream SERVER_PFX_PASSWORD;
     SERVER_PFX_PASSWORD << "s" << "e" << "c" << "r" << "e" << "t" << "p" << "a" << "s" << "s" << "w" << "o" << "r" << "d";
-    const std::string DH_FILE = "..\\certificate_server\\dh.pem";
+    const std::string DH_FILE = "..\\..\\certificate_server\\dh.pem";
 
     websocketpp::lib::shared_ptr<EchoServer<SecureWebSocketServerWrapper> > server = websocketpp::lib::make_shared<EchoServer<SecureWebSocketServerWrapper> >();
 
@@ -124,8 +124,8 @@ int main(int argc, char* argv[])
     websocketpp::lib::shared_ptr<IServer> server;
     
     //server = make_webserver(endpoint);
-    //server = make_secure_webserver(endpoint, false);
-    server = make_secure_webserver(endpoint, true);
+    server = make_secure_webserver(endpoint, false);
+    //server = make_secure_webserver(endpoint, true);
 
     server->start();
 

@@ -1,5 +1,6 @@
 *.suo
 *.sdf
+*.vs
 
 [Bb]in/
 [Oo]bj/
